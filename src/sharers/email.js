@@ -1,4 +1,7 @@
+import { WIN_PARAMS } from '../config';
 import encodeParams from '../utils/encodeParams';
+import updateWindowParams from '../utils/updateWindowParams';
+
 
 export default function email(options = {}) {
   const {
@@ -8,5 +11,5 @@ export default function email(options = {}) {
     subject,
     body: `${title || ''}\r\n${description || ''}\r\n${url || ''}`,
   });
-  return window.location.assign(`mailto:?${params}`);
+  return window.open(`mailto:?${params}`, '_blank', updateWindowParams(WIN_PARAMS, options));
 }
