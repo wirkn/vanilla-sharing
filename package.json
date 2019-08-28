@@ -25,12 +25,11 @@
   "module": "dist/vanilla-sharing.esm.js",
   "types": "vanilla-sharing.d.ts",
   "scripts": {
-    "size": "size-limit",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "lint": "eslint --ignore-path .gitignore .",
     "typescript-test": "tsc --project typing-tests",
-    "test": "npm run lint && npm run typescript-test && npm run build && npm run size && jest --coverage",
+    "test": "npm run lint && npm run typescript-test && npm run build",
     "test:watch": "jest --watchAll",
     "prepare": "npm run test",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
@@ -72,7 +71,6 @@
   "devDependencies": {
     "@babel/core": "7.5.5",
     "@babel/preset-env": "7.5.5",
-    "@size-limit/preset-small-lib": "2.1.1",
     "babel-eslint": "10.0.3",
     "coveralls": "3.0.6",
     "eslint": "6.2.2",
@@ -85,7 +83,6 @@
     "lint-staged": "9.2.5",
     "rollup": "1.20.2",
     "rollup-plugin-babel": "4.3.3",
-    "size-limit": "2.1.1",
     "typescript": "3.5.3"
   },
   "husky": {
