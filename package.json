@@ -20,7 +20,7 @@
   ],
   "homepage": "https://github.com/avdeev/vanilla-sharing",
   "bugs": "https://github.com/avdeev/vanilla-sharing/issues",
-  "version": "5.6.2",
+  "version": "5.6.3",
   "main": "dist/vanilla-sharing.umd.js",
   "module": "dist/vanilla-sharing.esm.js",
   "types": "vanilla-sharing.d.ts",
@@ -40,16 +40,6 @@
   "license": "MIT",
   "files": [
     "dist"
-  ],
-  "size-limit": [
-    {
-      "path": "dist/vanilla-sharing.umd.js",
-      "limit": "1.5 KB"
-    },
-    {
-      "path": "dist/vanilla-sharing.esm.js",
-      "limit": "1.6 KB"
-    }
   ],
   "lint-staged": {
     "*.js": "npm run lint -- "
