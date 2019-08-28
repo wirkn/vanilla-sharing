@@ -1,5 +1,6 @@
 import { WIN_PARAMS } from '../config';
 import encodeParams from '../utils/encodeParams';
+import updateWindowParams from '../utils/updateWindowParams';
 
 export default function tumblr(options = {}) {
   const {
@@ -14,5 +15,5 @@ export default function tumblr(options = {}) {
     posttype,
   });
 
-  return window.open(`https://www.tumblr.com/widgets/share/tool?${params}`, '_blank', WIN_PARAMS);
+  return window.open(`https://www.tumblr.com/widgets/share/tool?${params}`, '_blank', updateWindowParams(WIN_PARAMS, options));
 }

@@ -1,5 +1,6 @@
 import { WIN_PARAMS } from '../config';
 import encodeParams from '../utils/encodeParams';
+import updateWindowParams from '../utils/updateWindowParams';
 
 export function getWhatsappUrl(options = {}) {
   const { phone, title, url } = options;
@@ -13,5 +14,5 @@ export function getWhatsappUrl(options = {}) {
 }
 
 export function whatsapp(options = {}) {
-  return window.open(getWhatsappUrl(options), '_blank', WIN_PARAMS);
+  return window.open(getWhatsappUrl(options), '_blank', updateWindowParams(WIN_PARAMS, options));
 }

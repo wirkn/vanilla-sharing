@@ -1,5 +1,6 @@
 import { WIN_PARAMS } from '../config';
 import encodeParams from '../utils/encodeParams';
+import updateWindowParams from '../utils/updateWindowParams';
 
 const VK_MAX_LENGTH = 80;
 
@@ -28,5 +29,5 @@ export function getVkUrl(options = {}) {
 }
 
 export function vk(options = {}) {
-  return window.open(getVkUrl(options), '_blank', WIN_PARAMS);
+  return window.open(getVkUrl(options), '_blank', updateWindowParams(WIN_PARAMS, options));
 }

@@ -1,4 +1,5 @@
 import { WIN_PARAMS } from '../config';
+import updateWindowParams from '../utils/updateWindowParams';
 
 export default function line(options = {}) {
   const { title, url } = options;
@@ -13,5 +14,5 @@ export default function line(options = {}) {
     params = `${encodeURIComponent(`${title} `)}${params}`;
   }
 
-  return window.open(`https://line.me/R/msg/text/?${params}`, '_blank', WIN_PARAMS);
+  return window.open(`https://line.me/R/msg/text/?${params}`, '_blank', updateWindowParams(WIN_PARAMS, options));
 }

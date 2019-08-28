@@ -1,5 +1,6 @@
 import { WIN_PARAMS } from '../config';
 import encodeParams from '../utils/encodeParams';
+import updateWindowParams from '../utils/updateWindowParams';
 
 export default function mail(options = {}) {
   const {
@@ -13,5 +14,5 @@ export default function mail(options = {}) {
     imageurl: image,
   });
 
-  return window.open(`http://connect.mail.ru/share?${params}`, '_blank', WIN_PARAMS);
+  return window.open(`http://connect.mail.ru/share?${params}`, '_blank', updateWindowParams(WIN_PARAMS, options));
 }

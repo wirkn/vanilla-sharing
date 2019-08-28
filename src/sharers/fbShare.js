@@ -1,5 +1,6 @@
 import { WIN_PARAMS } from '../config';
 import encodeParams from '../utils/encodeParams';
+import updateWindowParams from '../utils/updateWindowParams';
 
 export function getFbShareUrl(options = {}) {
   const {
@@ -22,5 +23,5 @@ export function getFbShareUrl(options = {}) {
 }
 
 export function fbShare(options = {}) {
-  return window.open(getFbShareUrl(options), '_blank', WIN_PARAMS);
+  return window.open(getFbShareUrl(options), '_blank', updateWindowParams(WIN_PARAMS, options));
 }

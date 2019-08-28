@@ -1,5 +1,6 @@
 import { WIN_PARAMS } from '../config';
 import encodeParams from '../utils/encodeParams';
+import updateWindowParams from '../utils/updateWindowParams';
 
 export function getFbFeedUrl(options = {}) {
   const {
@@ -21,5 +22,5 @@ export function getFbFeedUrl(options = {}) {
 }
 
 export function fbFeed(options = {}) {
-  return window.open(getFbFeedUrl(options), '_blank', WIN_PARAMS);
+  return window.open(getFbFeedUrl(options), '_blank', updateWindowParams(WIN_PARAMS, options));
 }

@@ -1,5 +1,6 @@
 import { WIN_PARAMS } from '../config';
 import encodeParams from '../utils/encodeParams';
+import updateWindowParams from '../utils/updateWindowParams';
 
 export function getFbButtonUrl(options = {}) {
   const { url } = options;
@@ -21,5 +22,5 @@ export function getFbButtonUrl(options = {}) {
 }
 
 export function fbButton(options = {}) {
-  return window.open(getFbButtonUrl(options), '_blank', WIN_PARAMS);
+  return window.open(getFbButtonUrl(options), '_blank', updateWindowParams(WIN_PARAMS, options));
 }
